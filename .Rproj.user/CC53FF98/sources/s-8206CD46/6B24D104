@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1516776568663.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6B24D104",
+    "lastKnownWriteTime" : 1516795973,
+    "last_content_update" : 1516795973174,
+    "path" : "~/GIZ Work/dhis2 data wrangling/orgUnits.R",
+    "project_path" : "orgUnits.R",
+    "properties" : {
+        "cursorPosition" : "27,52",
+        "scrollLine" : "16",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

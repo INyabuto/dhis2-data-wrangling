@@ -1,0 +1,23 @@
+library(dplyr)
+
+#'
+#' A function to filter the orgnaization units metadata
+#' 
+#' 
+#' Set the working directory
+setwd("./metadata")
+
+#'
+#' Load the organization unit metadata file 
+#' 
+
+orgUnits <- read.csv(file = "orgunits_list_kqmh.csv", stringsAsFactors = FALSE)
+
+target <- c("Kisumu County", "Vihiga County", "Siaya County", "Kisumu County", "Kwale County")
+
+orgunits_filter <- function(orgUnits, target){
+  org <- dplyr::filter(orgUnits, name == target)
+  return org
+}
+
+
