@@ -1,5 +1,5 @@
 library(dplyr)
-setwd("./metadata")
+#setwd("./metadata")
 #'
 #'Read the orgunits_list
 orgunits_list <- read.csv(file="orgunits_list_kqmh.csv", stringsAsFactors = FALSE)
@@ -30,6 +30,6 @@ Kenya_focus_counties <- rbind(Kenya, focus_counties)
 # Merge the rows into one dataframe 
 orgunits_giz <- rbind(Kenya,focus_counties,sub_counties, wards, community, community_units)
 
-write.table(orgunits_giz, file = "orgunits_list_giz.csv", sep = ",", row.names = FALSE)
+write.table(orgunits_giz, file = "orgunits_list_giz.csv", sep = ",", row.names = FALSE, fileEncoding = "UTF-8")
 
 write.table(Kenya_focus_counties, file = "Kenya_focus_counties.csv", sep = ",", row.names = FALSE)
