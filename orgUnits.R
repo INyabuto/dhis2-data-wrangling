@@ -1,4 +1,5 @@
 library(dplyr)
+library(readr)
 #setwd("./metadata")
 #'
 #'Read the orgunits_list
@@ -11,7 +12,7 @@ Kenya <- filter(orgunits_list, name == "Kenya")
 counties <- filter(orgunits_list, parent == Kenya[,2])
 
 # the five counties of focus 
-focus_counties <- filter(counties, name %in% c("Kisumu County", "Vihiga County", "Siaya County", "Kisumu County", "Kwale County"))
+focus_counties <- filter(counties, name %in% c("Kisumu ", "Vihiga County", "Siaya County", "Kisumu County", "Kwale County"))
 
 # Get the sub counties
 sub_counties <- filter(orgunits_list, parent %in% focus_counties[,2])
@@ -30,6 +31,9 @@ Kenya_focus_counties <- rbind(Kenya, focus_counties)
 # Merge the rows into one dataframe 
 orgunits_giz <- rbind(Kenya,focus_counties,sub_counties, wards, community, community_units)
 
-write.table(orgunits_giz, file = "orgunits_list_giz.csv", sep = ",", row.names = FALSE, fileEncoding = "UTF-8")
+write_csv(orgunits_giz, path = "orgunits_list_giz.csv", na = "")
 
 write.table(Kenya_focus_counties, file = "Kenya_focus_counties.csv", sep = ",", row.names = FALSE)
+
+write.table(orgunits_list, file = "org_kqmh_list_test.csv", sep = ",", quote = TRUE)
+
